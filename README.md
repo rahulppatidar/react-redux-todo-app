@@ -12,23 +12,20 @@ A simple todo app made in react using redux, and react-redux.
 
 **License:**           MIT 
 
-**License URI:**       https://www.gnu.org/licenses/gpl-3.0.en.html
 
-
-
-##Synopsis
+## Synopsis
 
 This is an example of react with redux.
 
 
-###Features
+### Features
 
 * Add todos.
 * Delete todos.
 * Update todos.
 * Make them complete and resume.
 
-##Installation
+## Installation
 1. run npm install.
 2. run npm start.
 
