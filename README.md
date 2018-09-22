@@ -29,7 +29,7 @@ This is an example of react with redux.
 1. run npm install.
 2. run npm start.
 
-#Contribution
+# Contribution
 
 Contributors are always welcome.
 To contribute, just send a pull request.
