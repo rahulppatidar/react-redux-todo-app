@@ -27,6 +27,27 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.todoList {
-    width: 40%;
+.todolistbox{
+    width: 90%;
+    margin:auto;
+}
+
+.addtodobox {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+@media only screen and (max-width:576px) {
+  .todoItemBox .todoItem , .edittodoform .list-group-item{
+    flex-direction: column;
+  }
+  .editbuttonsbox,.todoactionbuttonbox{
+    margin-top: 20px;
+  }
+  .addtodobox .addtodo{
+      width: 100%;
+  }
+  .addtodobox .addtodo .form-group{      
+      margin: auto;
+  }
 }

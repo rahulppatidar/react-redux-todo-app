@@ -1,7 +1,7 @@
 import {ADD_TODO , DELETE_TODO , EDIT_TODO} from '../constants/todoConstants';
 import uuid from 'uuid';
 const todosInitialState = {
-  todos:[{id:uuid.v4(),title:"rahulppatidar"}]
+  todos:[{id:uuid.v4(),title:"rahulppatidar",isComplete:false}]
 }
 
 export const todoReducer = ( state = todosInitialState, action) =>{
