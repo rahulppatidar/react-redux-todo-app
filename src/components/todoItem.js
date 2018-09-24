@@ -5,7 +5,7 @@ class TodoItem extends Component {
     super(props);
     this.state={
       isEdit:false,
-      isDel:false
+      isDel:this.props.todo.isComplete
     }
   }
   onDelete(id){
@@ -33,6 +33,9 @@ class TodoItem extends Component {
   onCompleteToggle(){
     const isDel = !this.state.isDel;
     this.setState({isDel});
+    const todo = this.props.todo;
+    todo.isComplete=isDel;
+    this.props.onComplete(todo);
   }
   render(){
     return(
@@ -45,10 +48,10 @@ class TodoItem extends Component {
 
             <input className="form-control" type="text" ref={ todotitle => this.todotitle = todotitle } defaultValue={this.props.todo.title} placeholder="Enter Todo"/>
             <input type="hidden" ref="todoid" defaultValue={this.props.todo.id}/>
-
+            <span className="editbuttonsbox">
             <button className="btn btn-outline-success" >Save</button>
             <button className="btn btn-outline-secondary" onClick={this.onCancle.bind(this)}>Cancle</button>
-
+            </span>
             </div>
           </form>
 
@@ -58,7 +61,7 @@ class TodoItem extends Component {
           <div className="list-group-item d-flex justify-content-between align-items-center todoItem ">
             <span ref="title_without_del" onClick={this.onCompleteToggle.bind(this)} style={ {display: this.state.isDel?'none':'block'  } }>{this.props.todo.title}</span>
             <span ref="title_with_del" onClick={this.onCompleteToggle.bind(this)} style={{display: this.state.isDel?'block':'none'}}><del>{this.props.todo.title}</del></span>
-            <span className="d-flex">
+            <span className="d-flex todoactionbuttonbox" >
             <button className="btn btn-outline-danger btn-sm" onClick={this.onDelete.bind(this,this.props.todo.id)}>Del</button>
             <button className="btn btn-outline-info btn-sm" onClick={this.onEdit.bind(this,this.props.todo)}>Edit</button>
             <button  style={ {display: this.state.isDel?'none':'block'  } } className="btn btn-outline-warning btn-sm" onClick={this.onCompleteToggle.bind(this)}>Complete</button>
